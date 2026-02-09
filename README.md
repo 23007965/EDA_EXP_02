@@ -22,29 +22,43 @@ To analyze Netflix dataset and compare movies vs TV shows, top producing countri
 
 ## Program
 
-### How many titles (Movies vs. TV Shows) are there?
+###  Movies vs TV Shows
 ```python
 count_by_type = df.groupby('type')['title'].count()
 print("Count by Type:\n", count_by_type, "\n")
 ```
-### What’s the distribution of content types across countries?
+###  Country vs Type Pivot Table
 ```python
-
+pivot_country_type = df.pivot_table(
+index='country',
+columns='type',
+values='title',
+aggfunc='count',
+fill_value=0
+)
+# 🔹
+ Add "Total" column and find max country
+pivot_country_type['Total'] = pivot_country_type.sum(axis=1)
+max_country = pivot_country_type['Total'].idxmax()  # country with most titles
+max_count = pivot_country_type['Total'].max()       
+# number of titles
+print("Pivot Table (Country vs Type):\n", pivot_country_type.head(), "\n")
+print(f"Largest Overall: {max_country} with {max_count} titles\n")
 ```
-### What are the top 5 directors by number of titles?
+### Top 5 Directors
 ```python
 top_directors = df['director'].value_counts().head(5)
 print("Top 5 Directors:\n", top_directors, "\n")
 ```
 
-### Monthly trends in additions (by type)?
+### Yearly Trend of Additions (Movies vs TV Shows)
 ```python
 trend=df.groupby(['year_added','type']).size().unstack(fill_value=0)
 print("Yearly Trend by Type\n")
 print(trend.head())
 ```
 
-### Merge expanded genre/cast tables back to main DF for combined insights.
+### Expand Genres
 ``` python
 df_genre = (
 df[['show_id','listed_in']]
