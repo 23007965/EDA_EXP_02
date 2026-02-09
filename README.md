@@ -22,6 +22,32 @@ To analyze Netflix dataset and compare movies vs TV shows, top producing countri
 
 ## Program
 
+### Load dataset directly from GitHub
+
+```python 
+import pandas as pd
+import numpy as np
+
+url="https://raw.githubusercontent.com/allenkong221/netflix-titles-dataset/main/netflix_titles.csv"
+df=pd.read_csv(url)
+
+print("Shape:",df.shape)
+
+print("Columns:",df.columns,"\n")
+
+print("Types:",df['type'].value_counts(),"\n")
+```
+
+### Clean 'date_added' and extract year/month
+
+```python
+df['date_added']=df['date_added'].astype(str).str.strip()
+df['date_added']=pd.to_datetime(df['date_added'],errors='coerce')
+df['year_added']=df['date_added'].dt.year.astype('Int64')
+df['month_added']=df['date_added'].dt.month_name()
+
+df.head()
+```
 ###  Movies vs TV Shows
 ```python
 count_by_type = df.groupby('type')['title'].count()
@@ -65,19 +91,32 @@ df[['show_id','listed_in']]
 .assign(listed_in=df['listed_in'].str.split(', '))
 .explode('listed_in')
 )
-# Merge expanded genres back
+
 df_expanded = df.merge(df_genre, on='show_id', how='left')
-# Check merged columns
+
 print("Columns after merge:\n", df_expanded.columns)
-# Show sample of expanded genres
+
 print("\nExpanded Genre Sample:\n",
 df_expanded[['title','listed_in_y']].head())
-# 🔹
- Top 5 Genres (extra useful for insights)
+
+
 top_genres = df_expanded['listed_in_y'].value_counts().head(5)
 print("\nTop 5 Genres:\n", top_genres, "\n")
 ```
 ## Ouptut
+
+### Load dataset directly from GitHub
+
+<img width="701" height="37" alt="image" src="https://github.com/user-attachments/assets/09670272-2f3b-4309-ad9e-8ec1c4985038" />
+
+<img width="1679" height="359" alt="image" src="https://github.com/user-attachments/assets/0edcc44c-62ae-4ea2-bd0a-3f5e705f3c77" />
+
+<img width="829" height="163" alt="image" src="https://github.com/user-attachments/assets/d6b31853-9d8b-451d-b338-eb4e233bf75e" />
+
+
+### Clean 'date_added' and extract year/month
+
+<img width="1715" height="426" alt="image" src="https://github.com/user-attachments/assets/19c9abb3-31c2-4cd5-9544-a606490d7c99" />
 
 ###  Movies vs TV Shows
 
