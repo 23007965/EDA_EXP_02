@@ -109,7 +109,7 @@ print("\nTop 5 Genres:\n", top_genres, "\n")
 
 <img width="701" height="37" alt="image" src="https://github.com/user-attachments/assets/09670272-2f3b-4309-ad9e-8ec1c4985038" />
 
-<img width="1679" height="359" alt="image" src="https://github.com/user-attachments/assets/0edcc44c-62ae-4ea2-bd0a-3f5e705f3c77" />
+<img width="1701" height="365" alt="image" src="https://github.com/user-attachments/assets/f508ab74-8b5f-43b9-a4a3-e7845ec8c548" />
 
 <img width="829" height="163" alt="image" src="https://github.com/user-attachments/assets/d6b31853-9d8b-451d-b338-eb4e233bf75e" />
 
@@ -135,6 +135,8 @@ print("\nTop 5 Genres:\n", top_genres, "\n")
 <img width="550" height="186" alt="image" src="https://github.com/user-attachments/assets/11697080-3125-42bb-aa1b-ca6e0e374962" />
 
 ### Expand Genres
+
+<img width="710" height="154" alt="image" src="https://github.com/user-attachments/assets/7dd8e9d4-4078-4b43-8c2c-3f57018ee759" />
 
 <img width="596" height="167" alt="image" src="https://github.com/user-attachments/assets/c82d6c51-0c58-44d9-a40b-16c09ee511d4" />
 
