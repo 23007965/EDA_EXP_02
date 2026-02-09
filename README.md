@@ -36,8 +36,7 @@ values='title',
 aggfunc='count',
 fill_value=0
 )
-# 🔹
- Add "Total" column and find max country
+
 pivot_country_type['Total'] = pivot_country_type.sum(axis=1)
 max_country = pivot_country_type['Total'].idxmax()  # country with most titles
 max_count = pivot_country_type['Total'].max()       
@@ -79,6 +78,27 @@ top_genres = df_expanded['listed_in_y'].value_counts().head(5)
 print("\nTop 5 Genres:\n", top_genres, "\n")
 ```
 ## Ouptut
+
+###  Movies vs TV Shows
+
+<img width="524" height="110" alt="image" src="https://github.com/user-attachments/assets/e40a2e52-9537-48f3-a228-e531e426398c" />
+
+###  Country vs Type Pivot Table
+
+<img width="600" height="158" alt="image" src="https://github.com/user-attachments/assets/d878fe31-13da-4928-bb7e-b537d3ca9248" />
+
+### Top 5 Directors
+
+<img width="600" height="158" alt="image" src="https://github.com/user-attachments/assets/a11cbf37-c389-4fd1-aa9a-1e2dae9494e3" />
+
+### Yearly Trend of Additions (Movies vs TV Shows)
+
+<img width="550" height="186" alt="image" src="https://github.com/user-attachments/assets/11697080-3125-42bb-aa1b-ca6e0e374962" />
+
+### Expand Genres
+
+<img width="596" height="167" alt="image" src="https://github.com/user-attachments/assets/c82d6c51-0c58-44d9-a40b-16c09ee511d4" />
+
 
 ## Result 
 Helps Netflix in content planning & investments.
