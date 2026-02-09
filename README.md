@@ -4,11 +4,11 @@ P PARTHIBAN
 ```
 # Exp - 2 Netflix Shows & Movies
 
-**Aim**
+## Aim
 
 To analyze Netflix dataset and compare movies vs TV shows, top producing countries, and release year trends.
 
-**Procedure / Algorithm**
+## Procedure / Algorithm
 
   1)Load dataset (netflix_titles.csv).
   2)Count movies vs TV shows.
@@ -16,10 +16,10 @@ To analyze Netflix dataset and compare movies vs TV shows, top producing countri
   4)Create pivot table (release year vs type).
   5)Visualize with bar & line charts.
 
-**Program**
+## Program
 #Write your code here
 
-**Ouptut**
+## Ouptut
 
-**Result**
+## Result 
 Helps Netflix in content planning & investments.
